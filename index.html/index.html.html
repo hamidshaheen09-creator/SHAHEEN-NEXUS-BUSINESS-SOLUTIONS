@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shaheen Nexus Business Solutions - Digital solutions for modern businesses.">
+<title>Shaheen Nexus | Business Solutions</title>
+
+<style>
+:root {
+  --bg: #08111f;
+  --card: #111f33;
+  --gold: #e9c66d;
+  --white: #f7f9ff;
+  --muted: #aab8cc;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.7;
+}
+.container { width: 90%; max-width: 1150px; margin: auto; }
+header {
+  background: #08111fee;
+  border-bottom: 1px solid #ffffff18;
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: blur(12px);
+}
+nav {
+  min-height: 78px;
+  display: flex; justify-content: space-between;
+  align-items: center; gap: 20px;
+}
+.logo { font-size: 22px; font-weight: bold; color: var(--gold); }
+.logo small { display: block; font-size: 10px; letter-spacing: 3px; color: white; }
+nav ul { display: flex; gap: 25px; list-style: none; }
+nav a { color: white; text-decoration: none; }
+nav a:hover { color: var(--gold); }
+.btn {
+  display: inline-block; padding: 12px 22px;
+  border-radius: 8px; text-decoration: none;
+  font-weight: bold; border: none; cursor: pointer;
+}
+.gold { background: var(--gold); color: #101827; }
+.outline { border: 1px solid #ffffff50; color: white; }
+.hero {
+  min-height: 570px; display: flex; align-items: center;
+  background: radial-gradient(ellipse at 85% 30%, #203c5c, transparent 45%);
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1.2fr .8fr;
+  gap: 45px; align-items: center; padding: 75px 0;
+}
+.tag { color: var(--gold); text-transform: uppercase; letter-spacing: 3px; font-size: 13px; }
+h1 { font-size: clamp(40px, 5.5vw, 68px); line-height: 1.12; margin: 18px 0; }
+h1 span { color: var(--gold); }
+p { color: var(--muted); }
+.hero p { max-width: 580px; font-size: 18px; }
+.actions { display: flex; gap: 13px; flex-wrap: wrap; margin-top: 28px; }
+.hero-card {
+  background: linear-gradient(145deg, #1a304b, #101a2b);
+  border: 1px solid #ffffff20; border-radius: 22px;
+  padding: 30px; box-shadow: 0 25px 65px #0005;
+}
+.hero-card h2 { color: var(--gold); margin-bottom: 20px; }
+.metric {
+  padding: 16px 0; border-bottom: 1px solid #ffffff18;
+}
+.metric:last-child { border: 0; }
+.metric strong { font-size: 25px; display: block; }
+section { padding: 85px 0; }
+.section-title { text-align: center; max-width: 680px; margin: 0 auto 42px; }
+.section-title h2 { font-size: clamp(30px, 4vw, 43px); margin: 10px 0; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.card {
+  background: var(--card); border: 1px solid #ffffff12;
+  border-radius: 16px; padding: 27px; transition: .25s;
+}
+.card:hover { transform: translateY(-6px); border-color: #e9c66d80; }
+.icon { font-size: 30px; margin-bottom: 12px; }
+.card h3 { margin-bottom: 10px; }
+.card p { font-size: 15px; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.about-box {
+  padding: 30px; border-radius: 18px;
+  background: linear-gradient(135deg, #172c45, #101a2b);
+  border: 1px solid #ffffff15;
+}
+.about-box li { margin: 12px 0 12px 22px; color: var(--muted); }
+.project { overflow: hidden; padding: 0; }
+.project-banner {
+  height: 150px; display: grid; place-items: center;
+  font-size: 25px; font-weight: bold; color: var(--gold);
+  background: linear-gradient(135deg, #24486b, #111c30);
+}
+.project-body { padding: 23px; }
+.contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 35px; }
+form { background: var(--card); padding: 27px; border-radius: 17px; }
+input, textarea, select {
+  width: 100%; padding: 13px; margin: 7px 0 15px;
+  border-radius: 7px; border: 1px solid #ffffff25;
+  background: #0a1526; color: white;
+}
+textarea { min-height: 120px; resize: vertical; }
+label { font-size: 14px; }
+footer { border-top: 1px solid #ffffff18; padding: 25px 0; }
+.footer-row {
+  display: flex; justify-content: space-between;
+  flex-wrap: wrap; gap: 15px; align-items: center;
+}
+.credit { color: var(--gold); }
+.menu { display: none; background: none; border: 1px solid #ffffff40; color: white; padding: 8px 12px; border-radius: 7px; }
+@media(max-width:800px) {
+  .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  nav ul { gap: 12px; font-size: 14px; }
+}
+@media(max-width:560px) {
+  .menu { display: block; }
+  nav { flex-wrap: wrap; padding: 15px 0; }
+  nav ul { display: none; width: 100%; flex-direction: column; padding: 10px 0; }
+  nav ul.open { display: flex; }
+  .grid { grid-template-columns: 1fr; }
+  .hero-grid { padding: 55px 0; }
+  section { padding: 60px 0; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="logo" href="#home">SHAHEEN NEXUS
+        <small>BUSINESS SOLUTIONS</small>
+      </a>
+      <button class="menu" id="menuButton" aria-label="Toggle menu">☰</button>
+      <ul id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="tag">Your vision. Our strategy.</span>
+      <h1>Build a business that <span>stands out.</span></h1>
+      <p>We help businesses create a stronger digital presence with modern websites, smart workflows and practical growth strategies.</p>
+      <div class="actions">
+        <a href="#contact" class="btn gold">Start a Project ↗</a>
+        <a href="#services" class="btn outline">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h2>Business Growth</h2>
+      <div class="metric"><strong>01</strong><span>Understand your goals</span></div>
+      <div class="metric"><strong>02</strong><span>Create a clear strategy</span></div>
+      <div class="metric"><strong>03</strong><span>Build your digital future</span></div>
+      <p style="margin-top:15px;font-size:12px">Illustrative demo — not real business statistics.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">Our Services</span>
+      <h2>Solutions built around your business</h2>
+      <p>Professional digital services to help your business move forward.</p>
+    </div>
+    <div class="grid">
+      <article class="card"><div class="icon">✦</div><h3>Business Strategy</h3><p>Turn your ideas into clear plans, priorities and practical next steps.</p></article>
+      <article class="card"><div class="icon">▣</div><h3>Website Development</h3><p>Responsive websites designed for mobile, tablet and desktop users.</p></article>
+      <article class="card"><div class="icon">◈</div><h3>Brand Identity</h3><p>Build a consistent, recognizable identity for your business.</p></article>
+      <article class="card"><div class="icon">↗</div><h3>Digital Growth</h3><p>Improve your online presence and reach the right audience.</p></article>
+      <article class="card"><div class="icon">⌘</div><h3>Workflow Solutions</h3><p>Organize business processes with efficient digital tools.</p></article>
+      <article class="card"><div class="icon">◎</div><h3>Technical Support</h3><p>Get help planning and improving your digital systems.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about-grid">
+    <div>
+      <span class="tag">Why Shaheen Nexus</span>
+      <h2 style="font-size:40px;line-height:1.2;margin:15px 0">Professional thinking. Practical solutions.</h2>
+      <p>Our approach is simple: understand the problem, plan the right solution, and build an experience that is easy to use.</p>
+    </div>
+    <div class="about-box">
+      <h3>Our Working Principles</h3>
+      <ul>
+        <li>Clear communication and expectations</li>
+        <li>Responsive, user-friendly design</li>
+        <li>Purposeful features, not unnecessary complexity</li>
+        <li>Solutions designed to grow with your needs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">Portfolio</span>
+      <h2>Selected project concepts</h2>
+      <p>These are sample concepts created for portfolio demonstration.</p>
+    </div>
+    <div class="grid">
+      <article class="card project">
+        <div class="project-banner">Corporate</div>
+        <div class="project-body"><h3>Business Website</h3><p>A professional company website concept.</p></div>
+      </article>
+      <article class="card project">
+        <div class="project-banner">E-Commerce</div>
+        <div class="project-body"><h3>Online Store</h3><p>A product storefront and shopping experience concept.</p></div>
+      </article>
+      <article class="card project">
+        <div class="project-banner">Dashboard</div>
+        <div class="project-body"><h3>Business Dashboard</h3><p>A clean interface concept for business information.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">Contact Us</span>
+      <h2>Let's discuss your project</h2>
+      <p>Fill out the form to prepare an email enquiry.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <h3>Shaheen Nexus</h3>
+        <p style="margin-top:12px">Business Solutions<br>Pakistan · Online services</p>
+        <p style="margin-top:18px">Email: Replace with your business email</p>
+      </div>
+      <form id="contactForm">
+        <label for="name">Your Name</label>
+        <input id="name" required placeholder="Enter your name">
+        <label for="email">Your Email</label>
+        <input id="email" type="email" required placeholder="you@example.com">
+        <label for="service">Required Service</label>
+        <select id="service">
+          <option>Business Website</option>
+          <option>E-Commerce Website</option>
+          <option>Brand Identity</option>
+          <option>Other</option>
+        </select>
+        <label for="message">Project Details</label>
+        <textarea id="message" required placeholder="Describe your project..."></textarea>
+        <button class="btn gold" type="submit">Prepare Email ↗</button>
+        <p style="font-size:12px;margin-top:12px">Demo form: it does not store data or send messages to a server.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <span>© <span id="year"></span> Shaheen Nexus. Portfolio demo project.</span>
+    <span class="credit">Developed with ❤️ by Hamid Shaheen</span>
+    <a href="#home">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+const menuButton = document.getElementById("menuButton");
+const navLinks = document.getElementById("navLinks");
+
+menuButton.addEventListener("click", () => {
+  navLinks.classList.toggle("open");
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => navLinks.classList.remove("open"));
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const service = document.getElementById("service").value;
+  const message = document.getElementById("message").value;
+
+  const subject = encodeURIComponent("Project Enquiry: " + service);
+  const body = encodeURIComponent(
+    "Name: " + name + "\nEmail: " + email +
+    "\nService: " + service + "\n\nDetails:\n" + message
+  );
+
+  // Replace this placeholder with your real business email.
+  window.location.href =
+    "mailto:YOUR-EMAIL@example.com?subject=" + subject + "&body=" + body;
+});
+</script>
+</body>
+</html>
